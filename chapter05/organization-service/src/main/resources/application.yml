@@ -1,0 +1,23 @@
+#修改组织服务的application.yml，使其与eureka通信
+eureka:
+  instance:
+    #注册服务的ip而不是服务器名称
+    preferIpAddress: true
+  client:
+    #用eureka注册服务
+    registerWithEureka: true
+    #下拉注册信息并复制一份到本地
+    fetch-registry: true
+    service-url:
+      #eureka服务的位置
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8081
+
+#设置日志等级
+logging:
+  level:
+    com.netflix: warn
+    org.springframework.web: warn
+    com.xiaoxiya: debug

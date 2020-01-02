@@ -1,0 +1,36 @@
+#####第一种表示，配置服务的本地服务器#####
+#spring cloud 配置服务器将监听的端口
+server:
+  port: 8888
+
+spring:
+  profiles:
+    #将用于存储配置的后端存储库(文件系统)
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+        #存储配置文件的路径
+          #第一种表示
+          #search-locations: file:D:\IdeaWorkSpace\springcloud-demo\chapter03\confsvr\src\main\resources\config\licensingservice,file:D:\IdeaWorkSpace\springcloud-demo\chapter03\confsvr\src\main\resources\config\organizationservice
+         #第二种表示
+         searchLocations: classpath:config/,classpath:config/licensingservice,classpath:config/organizationservice
+
+
+#####第二种表示，使用git远程仓库配置#####
+#server:
+#  port: 8888
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        encrypt.enabled: false
+#        #告诉spring cloud配置使用git作为后端存储库
+#        git:
+#          #告诉spring cloud配置到git服务器和git仓库的url
+#          uri: https://github.com/carnellj/config-repo/
+#          #告诉spring cloud配置在git仓库中的相对路径，在spring cloud配置服务启动后将可以搜索
+#          searchPaths: licensingservice,organizationservice
+#          username: native-cloud-apps
+#          password: 0ffended

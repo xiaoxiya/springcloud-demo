@@ -1,0 +1,15 @@
+server:
+  #Eureka服务器将监听的端口
+  port: 8761
+
+eureka:
+  client:
+    #不在eureka服务注册，因为他是eureka服务
+    register-with-eureka: false
+    #不在本地缓存注册信息
+    fetch-registry: false
+  server:
+    #服务器接受请求之前的等待时间
+    wait-time-in-ms-when-sync-empty: 5
+  serviceUrl:
+    defaultZone: http://localhost:8761

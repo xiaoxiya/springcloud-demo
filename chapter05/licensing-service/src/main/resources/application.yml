@@ -1,0 +1,17 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8080
+
+#设置日志等级
+logging:
+  level:
+    com.netflix: warn
+    org.springframework.web: warn
+    com.xiaoxiya: debug

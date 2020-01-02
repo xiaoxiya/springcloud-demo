@@ -1,0 +1,12 @@
+spring:
+  application:
+    #将在eureka注册的服务逻辑名称
+    name: licensingservice
+  profiles:
+    active: default
+  cloud:
+    config:
+      enabled: true
+#      discovery:
+#        enabled: true
+#        serviceId: configserver
